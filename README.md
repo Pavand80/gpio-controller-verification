@@ -1,172 +1,107 @@
-# GPIO Controller with Bidirectional I/O (RTL + Verification)
+# GPIO Controller (RTL + Verification)
 
 ## 📌 Description
 
-This project implements a **2-bit GPIO (General Purpose Input/Output) Controller** in SystemVerilog featuring true **bidirectional GPIO pins** using tri-state logic. The controller supports configurable input/output modes, edge-based interrupt generation, interrupt clearing, and a complete end-to-end SystemVerilog verification environment.
-
-The design is fully synthesizable and verified through simulation using EDA Playground and EPWave.
+This project implements a **2-bit GPIO Controller** using SystemVerilog RTL with **bidirectional GPIO pins (inout)**. The controller supports configurable input/output operation, edge-based interrupt generation, interrupt clearing, and complete functional verification using a modular SystemVerilog testbench.
 
 ---
 
 ## ⚙️ Features
 
-- 2-bit Bidirectional GPIO Interface (`inout gpio_pin`)
-- Configurable Input / Output Direction
-- Tri-State Output Driver
-- Input Sampling Logic
-- Rising/Falling Edge Detection
-- Interrupt Enable & Status Registers
-- Interrupt Clear Mechanism
-- Global IRQ Generation
-- Fully Synthesizable RTL
-- Complete SystemVerilog Verification
-
----
-
-# 🧠 RTL Architecture
-
-<p align="center">
-    <img src="docs/block diagram.png" width="900">
-</p>
-
-The GPIO controller consists of:
-
-- Direction Register
-- Output Register
+- Bidirectional GPIO (inout)
+- Input / Output Direction Control
 - Tri-State Driver
-- Input Sampler
-- Edge Detection Logic
-- Interrupt Controller
-- IRQ Generator
+- Edge Detection
+- Interrupt Generation
+- Interrupt Clear
+- IRQ Output
+- SystemVerilog RTL
+- Complete Verification Environment
 
 ---
 
-# 🔄 GPIO Operation Flow
+## 🧠 RTL Architecture
 
-<p align="center">
-    <img src="docs/flow chart.png" width="700">
-</p>
-
-Operation sequence:
-
-1. Reset initializes internal registers.
-2. Direction register configures each GPIO pin.
-3. Output mode drives data onto GPIO pins.
-4. Input mode releases pins into High-Z.
-5. Input sampler captures GPIO values.
-6. Edge detector compares current and previous samples.
-7. Interrupt status is updated.
-8. IRQ is generated when enabled interrupts are active.
+![Block Diagram](docs/block%20diagram.png)
 
 ---
 
-# 🧪 Verification Architecture
+## 🔄 Flow Chart
 
-<p align="center">
-    <img src="docs/test bench flow diagram.png" width="900">
-</p>
+![Flow Chart](docs/flow%20chart.png)
+
+---
+
+## 🧪 Verification Architecture
+
+![Testbench Flow](docs/test%20bench%20flow%20diagram.png)
 
 The verification environment includes:
 
 - Generator
-- Mailbox
 - Driver
-- Interface
-- DUT
 - Monitor
-- Coverage
+- Interface
+- Environment
 - Scoreboard
-
-This architecture verifies:
-
-- Input Mode
-- Output Mode
-- Bidirectional GPIO Behaviour
-- Edge Detection
-- Interrupt Generation
-- Interrupt Clear
-- IRQ Assertion
+- Transaction
+- Test
+- Top Module
 
 ---
 
-# 📊 Simulation
+## 📊 Simulation
 
-Simulation performed using:
+Simulation completed using:
 
 - EDA Playground
 - EPWave
 
-### Simulation Link
+Simulation Link:
 
 https://www.edaplayground.com/x/YW2c
 
-Waveforms verify:
-
-- Direction Switching
-- Tri-State GPIO Behaviour
-- Input Sampling
-- Edge Detection
-- Interrupt Status Update
-- IRQ Generation
-
 ---
 
-# 📁 Project Structure
+## 📁 Project Structure
 
 ```
-rtl/
-    gpio_controller.sv
-
-tb/
-    SystemVerilog Testbench
-
-docs/
-    block diagram.png
-    flow chart.png
-    test bench flow diagram.png
-
-results/
-    Waveforms
-
+rtl/      → RTL Design
+svtb/     → SystemVerilog Verification Environment
+docs/     → Block Diagram, Flow Chart, Testbench Diagram
+results/  → Waveforms
 README.md
 ```
 
 ---
 
-# 🛠️ Tools Used
+## 🛠️ Tools Used
 
 - SystemVerilog
 - EDA Playground
 - EPWave
-- QuestaSim (Compatible)
 
 ---
 
-# 🚀 Applications
+## 🚀 Applications
 
 - FPGA Designs
 - Embedded Systems
-- SoC Peripheral Design
 - GPIO IP Development
+- SoC Design
 - Interrupt Controllers
-- Digital System Verification
 
 ---
 
-# 🔮 Future Improvements
+## 🔮 Future Improvements
 
+- APB Interface
 - Parameterized GPIO Width
-- APB/AHB Bus Interface
-- Configurable Edge Selection
+- Configurable Interrupt Types
 - Debounce Logic
-- Low-Power GPIO Support
 
 ---
 
-# 👨‍💻 Contributor
+## 👨‍💻 Contributors
 
-**Pavan D D**
-
----
-
-## ⭐ If you found this project useful, consider giving it a Star.
+- Pavan D D
