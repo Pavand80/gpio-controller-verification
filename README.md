@@ -1,40 +1,107 @@
 # GPIO Controller (RTL + Verification)
 
 ## 📌 Description
-This project implements a GPIO (General Purpose Input/Output) controller using SystemVerilog RTL and verifies it using a complete end-to-end SystemVerilog testbench architecture.
+
+This project implements a **2-bit GPIO Controller** using SystemVerilog RTL with **bidirectional GPIO pins (inout)**. The controller supports configurable input/output operation, edge-based interrupt generation, interrupt clearing, and complete functional verification using a modular SystemVerilog testbench.
+
+---
 
 ## ⚙️ Features
-- GPIO direction control (input/output)
-- Input sampling and output driving
-- Interrupt generation support
-- Configurable GPIO behavior
+
+- Bidirectional GPIO (inout)
+- Input / Output Direction Control
+- Tri-State Driver
+- Edge Detection
+- Interrupt Generation
+- Interrupt Clear
+- IRQ Output
+- SystemVerilog RTL
+- Complete Verification Environment
+
+---
 
 ## 🧠 RTL Architecture
-![Block Diagram](docs/block_diagram.png)
 
-## 🔄 Verification Flow
-![Testbench Flow](docs/tb_flow_diagram.png)
+![Block Diagram](docs/block%20diagram.png)
 
-## 📊 Flowchart
-![Flowchart](docs/flowchart.png)
+---
 
-## 🧪 Verification Overview
-The design is verified using a modular SystemVerilog testbench including:
-- Generator → creates stimulus
-- Driver → drives inputs to DUT
-- Monitor → observes outputs
-- Scoreboard → checks correctness
-- Environment → connects all components
+## 🔄 Flow Chart
 
-## 🛠️ Current Status
-- RTL design completed
-- Testbench architecture designed
-- Full verification files will be organized and added
+![Flow Chart](docs/flow%20chart.png)
+
+---
+
+## 🧪 Verification Architecture
+
+![Testbench Flow](docs/test%20bench%20flow%20diagram.png)
+
+The verification environment includes:
+
+- Generator
+- Driver
+- Monitor
+- Interface
+- Environment
+- Scoreboard
+- Transaction
+- Test
+- Top Module
+
+---
+
+## 📊 Simulation
+
+Simulation completed using:
+
+- EDA Playground
+- EPWave
+
+Simulation Link:
+
+https://www.edaplayground.com/x/YW2c
+
+---
 
 ## 📁 Project Structure
-- rtl/ → RTL design files  
-- docs/ → Block diagram, flow diagram, flowchart  
-- tb/ → (To be added: verification environment)
+
+```
+rtl/      → RTL Design
+svtb/     → SystemVerilog Verification Environment
+docs/     → Block Diagram, Flow Chart, Testbench Diagram
+results/  → Waveforms
+README.md
+```
+
+---
+
+## 🛠️ Tools Used
+
+- SystemVerilog
+- EDA Playground
+- EPWave
+
+---
+
+## 🚀 Applications
+
+- FPGA Designs
+- Embedded Systems
+- GPIO IP Development
+- SoC Design
+- Interrupt Controllers
+
+---
+
+## 🔮 Future Improvements
+
+- APB Interface
+- Parameterized GPIO Width
+- Configurable Interrupt Types
+- Debounce Logic
+
+---
 
 ## 👨‍💻 Contributors
-- Pavan
+
+- Pavan D D
