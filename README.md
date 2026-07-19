@@ -50,23 +50,30 @@ The verification environment includes:
 
 ---
 
-## 📊 Simulation Output
+## 📊 Simulation
 
-The simulation verifies the complete functionality of the GPIO Controller.
+Simulation completed using:
 
-Verified scenarios include:
+- EDA Playground
+- EPWave
+
+### Simulation Link
+
+https://www.edaplayground.com/x/YW2c
+
+### Simulation Output
+
+The waveform verifies the following functionalities:
 
 - Reset Operation
-- GPIO Direction Configuration
-- Bidirectional GPIO Operation
-- Tri-State (High-Z) Behavior
+- Bidirectional GPIO Configuration
+- Input / Output Direction Control
+- Tri-State (High-Z) Operation
 - Input Sampling
 - Edge Detection
 - Interrupt Generation
-- Interrupt Clear Operation
+- Interrupt Clear
 - IRQ Assertion
-
-### Simulation Waveform
 
 ![Waveform](results/waveform.png)
 ---
