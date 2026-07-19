@@ -2,7 +2,7 @@
 
 ## 📌 Description
 
-This project implements a **2-bit GPIO Controller** using SystemVerilog RTL with **bidirectional GPIO pins (inout)**. The controller supports configurable input/output operation, edge-based interrupt generation, interrupt clearing, and complete functional verification using a modular SystemVerilog testbench.
+This project implements a **2-bit GPIO (General Purpose Input/Output) Controller** using SystemVerilog RTL with **bidirectional GPIO pins (inout)**. The controller supports configurable input/output operation, tri-state control, edge-based interrupt generation, interrupt clearing, and complete functional verification using a modular SystemVerilog testbench.
 
 ---
 
@@ -11,6 +11,7 @@ This project implements a **2-bit GPIO Controller** using SystemVerilog RTL with
 - Bidirectional GPIO (inout)
 - Input / Output Direction Control
 - Tri-State Driver
+- Input Sampling
 - Edge Detection
 - Interrupt Generation
 - Interrupt Clear
@@ -34,16 +35,16 @@ This project implements a **2-bit GPIO Controller** using SystemVerilog RTL with
 
 ## 🧪 Verification Architecture
 
-![Testbench Flow](docs/test%20bench%20flow%20diagram.png)
+![Testbench Flow Diagram](docs/test%20bench%20flow%20diagram.png)
 
-The verification environment includes:
+The verification environment consists of:
 
 - Generator
 - Driver
-- Monitor
 - Interface
-- Environment
+- Monitor
 - Scoreboard
+- Environment
 - Transaction
 - Test
 - Top Module
@@ -75,16 +76,33 @@ The waveform verifies the following functionalities:
 - Interrupt Clear
 - IRQ Assertion
 
-![Waveform](results/waveform.png)
+![Waveform](docs/waveform.png)
+
 ---
 
 ## 📁 Project Structure
 
 ```
-rtl/      → RTL Design
-svtb/     → SystemVerilog Verification Environment
-docs/     → Block Diagram, Flow Chart, Testbench Diagram
-results/  → Waveforms
+rtl/
+    gpio_controller.sv
+
+svtb/
+    driver.sv
+    environment.sv
+    generator.sv
+    interface.sv
+    monitor.sv
+    scoreboard.sv
+    test.sv
+    top.sv
+    transaction.sv
+
+docs/
+    block diagram.png
+    flow chart.png
+    test bench flow diagram.png
+    waveform.png
+
 README.md
 ```
 
@@ -102,21 +120,22 @@ README.md
 
 - FPGA Designs
 - Embedded Systems
-- GPIO IP Development
-- SoC Design
-- Interrupt Controllers
+- SoC GPIO Peripheral
+- Digital System Design
+- Interrupt Controller Design
 
 ---
 
 ## 🔮 Future Improvements
 
-- APB Interface
 - Parameterized GPIO Width
-- Configurable Interrupt Types
+- APB Bus Interface
+- Configurable Edge Triggering
 - Debounce Logic
+- Low-Power GPIO Support
 
 ---
 
-## 👨‍💻 Contributors
+## 👨‍💻 Contributor
 
-- Pavan D D
+**Pavan D D**
